@@ -5,135 +5,296 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Richard Baltazar Website</title>
     <link href="images/favicon.svg" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Maitree:wght@200;300;400;500;600;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <style>
-        body{
-            background-color: black;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+        @scope(:root){
+            :root{
+                --brand: #F4B400;
+            }
+
+            html, body {
+            overflow-x: hidden;
+            }
+
+            body{
+                background-color: black;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                min-height: 100dvh; 
+            }
+
+            h1, h2, h3, p, li, ul, article p, fun-facts p, b{
+                color: white;
+            }
+
+            footer{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 2em 0;
+                gap: 1em;
+
+                p{
+                    color: white;
+                    margin: 1em 0 0 0;
+                    font-family: 'Nunito', sans-serif;
+                }
+
+                ul{
+                    display: flex;
+                    list-style: none;
+                    gap: 2em;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+
+            a{
+                color: white;
+                text-decoration: none;
+
+                &:hover{
+                    color: var(--brand, #F4B400);
+                    text-shadow: 0 0 10px var(--brand, #F4B400);
+                    transition: 0.3s ease;
+                }
+            }
+
+            hr{
+                width: 100%;
+                border: 1px solid var(--brand, #F4B400);
+            }
+
+            img{
+                height: 10em;
+                width: 10em;
+            }
+
+            h1{
+                margin: 0.5em 0.5em;
+                font-family: "Nunito", sans-serif;
+                font-weight: 800;
+            }
+
+            fun-facts h3, h3{
+                display: flex;
+                justify-content: center;
+            }
+
+            h3{
+                font-size: 2em;
+                font-family: 'Nunito', sans-serif;
+            }
+
+            section{
+                ul{
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                }
+
+                ol{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                }
+            }
+
+            ol p, ul p{
+                text-align: center;
+            }
+
+            article{
+                p{
+                    max-width: 50rem;
+                    margin: 0 auto;
+                    text-align: center;
+                    font-family: 'Nunito', sans-serif;
+                }
+            }
+
+            iframe{
+                width: 80%;
+                height: 50rem;
+                border: none;
+                margin: auto;
+                display: block;
+                padding-bottom: 2em;
+            }
+
+            fun-facts{
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                flex-wrap: wrap;
+                flex-direction: column;
+
+                b{
+                    display: block;
+                    margin-bottom: 0.5em;
+                    font-size: 1.2em;
+                    font-family: 'Nunito', serif;
+                }
+
+                ul{
+                    list-style: none;
+                    padding: 0;
+
+                    li{
+                        padding: 0.2em 0;
+                    }
+                }
+            }
+
+            ul, ol{
+                padding: 0;
+                font-family: 'Maitree', serif;
+            }
+
+            .pagebreak{
+                display: flex;
+                align-items: center;
+                width: 50%;
+            }
         }
 
-        h1, h2, h3, p, li, ul, article p, fun-facts p, b{
-            color: white;
+        @media (max-width: 600px){
+            @scope(:root){
+                h1{
+                    margin: .75rem .75rem .25rem;
+                }
+
+                h3{
+                    font-size: 1.5rem;
+                }
+
+                img{
+                    width: 8rem;
+                    height: 8rem;
+                }
+
+                article{
+                    p{
+                        padding: 0 1rem;
+                        font-size: 1rem;
+                        line-height: 1.55;
+                    }
+                }
+
+                section{
+                    ul, ol{
+                        gap: .25rem;
+                        padding: 0 1rem;
+                    }
+                }
+
+                ol p, ul p{
+                    padding: 0 .5rem;
+                }
+
+                iframe{
+                    width: 95%;
+                    height: 28rem;
+                }
+
+                .pagebreak{
+                    width: 85%;
+                }
+
+                fun-facts{
+                    align-items: center;
+                    padding: 0 1rem 1.25rem;
+
+                    b{
+                        font-size: 1.05rem;
+                    }
+                }
+
+                footer{
+                    ul{
+                        gap: .75rem;
+                        padding: .5rem 0 0;
+                    }
+
+                    a{
+                        font-size: 1rem;
+                        padding: .5rem .75rem;
+                    }
+
+                    p{
+                        font-size: .9rem;
+                        text-align: center;
+                    }
+                }
+            }
         }
 
-        footer{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            padding: 2em 0;
-            gap: 1em;
-        }
+        @media (min-width: 601px) and (max-width: 1199px){
+            @scope(:root){
+                h3{
+                    font-size: 1.75rem;
+                }
 
-        footer p{
-            color: white;
-            margin: 1em 0 0 0;
-        }
+                img{
+                    width: 9rem;
+                    height: 9rem;
+                }
 
-        a{
-            color: white;
-            text-decoration: none;
-        }
+                article{
+                    p{
+                        max-width: 42rem;
+                        margin: 0 auto;
+                        font-size: 1.075rem;
+                        line-height: 1.6;
+                        padding: 0 1rem;
+                    }
+                }
 
-        a:hover{
-            text-decoration: underline;
-        }
+                section{
+                    ul, ol{
+                        gap: .35rem;
+                        padding: 0 1rem;
+                    }
+                }
 
-        footer ul{
-            display: flex;
-            list-style: none;
-            gap: 2em;
-            margin: 0;
-            padding: 0;
-        }
+                iframe{
+                    width: 88%;
+                    height: 38rem;
+                }
 
-        hr{
-            width: 100%;
-            border: 1px solid #F4B400;
-        }
+                .pagebreak{
+                    width: 65%;
+                }
 
-        img{
-            height: 10em;
-            width: 10em;
-        }
-        
-        h2, fun-facts h3, h3{
-            display: flex;
-            justify-content: center;
-        }
+                fun-facts{
+                    align-items: center;
+                    padding: 0 1rem 1.5rem;
 
-        h2{
-            font-size: 3em;
-        }
+                    b{
+                        font-size: 1.15rem;
+                    }
+                }
 
-        h3{
-            font-size: 2em;
-        }
+                footer{
+                    ul{
+                        gap: 4rem;
+                    }
 
-        section ul{
-            list-style: none;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
+                    a{
+                        font-size: 1.15rem;
+                    }
 
-        ol p, ul p{
-            text-align: center;
-        }        
-
-        article p{
-            max-width: 50rem;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        section ol{
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        iframe{
-            width: 80%;
-            height: 50rem;
-            border: none;
-            margin: auto;
-            display: block;
-            padding-bottom: 2em;
-        }
-
-        fun-facts{
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            flex-wrap: wrap;
-            flex-direction: column;
-        }
-
-        fun-facts b {
-            display: block;
-            margin-bottom: 0.5em;
-            font-size: 1.2em;
-        }
-
-        fun-facts ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        fun-facts ul li {
-            padding: 0.2em 0;
-        }
-
-        ul, ol{
-            padding: 0;
-        }
-
-        .pagebreak {
-            display: flex;
-            align-items: center;
-            width: 50%;
+                    p{
+                        font-size: 1rem;
+                        text-align: center;
+                    }
+                }
+            }
         }
 
     </style>
@@ -143,10 +304,6 @@
      <h1><a href="index.html">Richard Baltazar</a></h1>
      
      <hr>
-
-    <header>
-        <h2>About</h2>
-    </header>
 
   <main>
     <section>

@@ -5,78 +5,229 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Richard Baltazar Website</title>
     <link href="images/me.jpg" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Maitree:wght@200;300;400;500;600;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <style>
-        body{
-            background-color: black;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+        @scope(:root){
+            :root{
+                --brand: #F4B400
+            }
+
+            html, body {
+                overflow-x: hidden;
+            }
+
+            body{
+                background-color: black;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                min-height: 100dvh;
+            }
+
+            main{
+                flex: 1;
+                padding: 1em;
+            }
+
+            h1, h2, h3, li, ol{
+                color: white;
+            }
+
+            footer{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 2em 0;
+                gap: 1em;
+                
+                p{
+                    color: white;
+                    margin: 1em 0 0 0;
+                    font-family: 'Nunito', sans-serif;
+                }
+
+                ul{
+                    display: flex;
+                    list-style: none;
+                    gap: 2em;
+                    margin: 0;
+                    padding: 0;
+                    margin-top: auto;
+                }
+            }
+
+            a{
+                color: white;
+                text-decoration: none;
+
+                &:hover{
+                    color: var(--brand, #F4B400);
+                    text-shadow: 0 0 10px var(--brand, #F4B400);
+                    transition: 0.3s ease;
+                }
+            }
+
+            hr{
+                width: 100%;
+                border: 1px solid var(--brand, #F4B400);
+            }
+
+            h1{
+                margin: 0.5em 0.5em;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 800;
+            }
+
+            b{
+                font-family: 'Nunito', sans-serif;
+                color: #fff;
+                text-shadow: 
+                    0 0 8px var(--brand, #F4B400),
+                    0 0 15px var(--brand, #F4B400),
+                    0 0 25px var(--brand, #F4B400);
+            }
+
+            h3{
+                font-size: 4em;
+                text-align: center;
+                padding: none;
+                margin: none;
+                font-family: 'Nunito', sans-serif;
+            }
+
+            ol{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+
+                li{
+                    font-size: 2em;
+                    list-style: none;
+                    padding: 0.2em;
+                    font-family: 'Maitree', sans-serif;
+                }
+            }
+
+            ul{
+                font-family: 'Maitree', sans-serif;
+            }
+
+            p{
+                font-family: 'nunito', sans-serif;
+            }
+
+            span{
+                color: #F4B400;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                cursor: pointer;
+
+                &:hover{
+                    color: #fff;
+                    text-shadow: 0 0 10px var(--glow), 0 0 20px var(--glow);
+                    transform: scale(1.05);
+                }
+            }
+
+            @property --glow {
+                syntax: '<color>';
+                inherits: true;
+                initial-value: #F4B400;
+            }
         }
 
-        main{
-            flex: 1;
-        }
+        @media (max-width: 600px){
+            @scope(:root){
+                main {
+                    padding: 0.75rem;
+                }
 
-        h1, h2, h3, li, ol{
-            color: white;
-        }
+                h3{
+                    font-size: 2rem;
+                    margin: 0.25rem 0 0.75rem;
+                    text-align: center;
+                }
 
-        footer{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            padding: 2em 0;
-            gap: 1em;
-        
-        }
-        
-        footer p{
-            color: white;
-            margin: 1em 0 0 0;
-        }
+                ol{
+                    gap: 0.25rem;
+                    padding: 0 0.5rem;
+                    align-items: center;
 
-        a{
-            color: white;
-            text-decoration: none;
-        }
+                    li{
+                        font-size: 1.15rem;
+                        line-height: 1.45;
+                        padding: 0.15rem 0;
+                    }
+                }
 
-        a:hover{
-            text-decoration: underline;
-        }
+                span{
+                    font-weight: 700;
 
-        footer ul{
-            display: flex;
-            list-style: none;
-            gap: 2em;
-            margin: 0;
-            padding: 0;
-            margin-top: auto;
-        }
+                    &:hover{
+                        transform: none;
+                    }
+                }
 
-        hr{
-            width: 100%;
-            border: 1px solid #F4B400;
-          }
+                footer{
+                    ul{
+                        gap: .75rem;
+                        padding: .5rem 0 0;
+                    }
 
-        h2{
-            display: flex;
-            justify-content: center;
-            font-size: 3em;
-        }
+                    a{
+                        font-size: 1rem;
+                        padding: .5rem .75rem;
+                    }
 
-        h3{
-            font-size: 4em;
-        }
+                    p{
+                        font-size: .9rem;
+                        text-align:center;
+                    }
+                }
+                }
+            }
 
-        ol{
-            display: flex;
-            flex-direction: column;
-            list-style: ;
-        }
+            @media (min-width: 601px) and (max-width: 1199px){
+            @scope(:root){
+                main {
+                    padding: 1rem;
+                }
 
-        ol li{
-            font-size: 2em;
+                h3{
+                    font-size: 3rem;
+                    margin: 0.25rem 0 1rem;
+                }
+
+                ol{
+                    gap: 0.35rem;
+                    padding: 0 1rem;
+                    align-items: center;
+
+                    li{
+                        font-size: 1.6rem;
+                        line-height: 1.5;
+                        padding: 0.2rem 0;
+                    }
+                }
+
+                footer{
+                    ul{
+                        gap: 4rem;
+                    }
+
+                    a{
+                        font-size: 1.15rem;
+                    }
+
+                    p{
+                        font-size: 1rem;
+                        text-align: center;
+                    }
+                }
+            }
         }
     </style>
 </head>
@@ -86,28 +237,25 @@
      
      <hr>
 
-    <header>
-        <h2>Skills</h2>
-    </header>
-
   <main>
     <section>
-        <h3>Richard Baltazar</h3>
-        <ol>
-            <li>can code in Python and JavaScript</li>
-            <li>confident in HTML and CSS</li>
-            <li>has experience in Dynamics, Excel, Sheets, SQL, and Databases</li>
-            <li>made design and wireframes using Figma and Photoshop</li>
-            <li>uses Visual Studio code</li>
-            <li>had a project in React</li>
-            <li>is proficient in tagalog</li>
-            <li>is quick to problem-solve and interpret patterns and trends</li>
-            <li>likes to collaborate and work with others</li>
-            <li>knows how to manage his time </li>
-            <li>stays curious</li>
-            <li>is eager to improve and explore</li>
-        </ol>
+        <h3><b>I</b>, Richard Baltazar</h3>
+            <ol>
+                <li>can code in <span>Python</span> and <span>JavaScript</span>,</li>
+                <li>is confident in <span>HTML</span> and <span>CSS</span>,</li>
+                <li>has experience in <span>Dynamics</span>, <span>Excel</span>, <span>Sheets</span>, <span>SQL</span>, and <span>Databases</span>,</li>
+                <li>made design and wireframes using <span>Figma</span> and <span>Photoshop</span>,</li>
+                <li>uses <span>Visual Studio Code</span>,</li>
+                <li>had a project in <span>React</span>,</li>
+                <li>is proficient in <span>Tagalog</span>,</li>
+                <li>is quick to problem-solve and interpret <span>patterns</span> and <span>trends</span>,</li>
+                <li>likes to <span>collaborate</span> and work with others,</li>
+                <li>knows how to <span>manage his time</span>,</li>
+                <li>stays <span>curious</span>,</li>
+                <li>is eager to <span>improve</span> and <span>explore</span>.</li>
+            </ol>
     </section>
+
   </main>
 
  <hr>
